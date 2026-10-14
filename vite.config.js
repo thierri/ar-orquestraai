@@ -16,6 +16,9 @@ function lanAddress() {
 }
 
 export default defineConfig({
+  // Caminhos relativos: o mesmo build funciona na raiz de um domínio e em
+  // subcaminhos como https://thierri.github.io/ar-orquestraai/.
+  base: './',
   // HTTPS é obrigatório para o navegador do celular liberar a câmera.
   plugins: [basicSsl()],
   resolve: {

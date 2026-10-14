@@ -19,16 +19,12 @@ O servidor usa um certificado autoassinado (o celular só libera a câmera em HT
 
 ## Publicação
 
-Produção: **https://165-227-94-107.sslip.io/** (celular: `/ar/`).
+Produção: **https://5publi.app/ar-orquestraai/** (celular: `ar/`), via GitHub Pages.
 
-Droplet Ubuntu na DigitalOcean servindo os arquivos estáticos com [Caddy](https://caddyserver.com), que emite o certificado HTTPS automaticamente.
-Para publicar uma nova versão (precisa de acesso SSH como `root` na droplet):
+Todo push na `main` dispara o workflow [`.github/workflows/pages.yml`](.github/workflows/pages.yml), que faz o build e publica.
+O build usa caminhos relativos (`base: './'`), então funciona tanto na raiz de um domínio quanto em subcaminhos.
 
-```bash
-./deploy/deploy.sh
-```
-
-O script gera o build, envia `dist/` para `/var/www/ar-orquestraai` e atualiza a configuração do Caddy (`deploy/Caddyfile`).
+Alternativa: `deploy/` tem a configuração usada antes numa droplet da DigitalOcean com Caddy (`./deploy/deploy.sh`).
 
 ## Estrutura
 
