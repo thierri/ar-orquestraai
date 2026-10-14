@@ -1,0 +1,16 @@
+# Caddy gera e renova sozinho o certificado HTTPS (Let's Encrypt).
+# sslip.io resolve 165-227-94-107.sslip.io para o IP 165.227.94.107.
+165-227-94-107.sslip.io {
+	root * /var/www/ar-orquestraai
+	encode zstd gzip
+	file_server
+
+	# Arquivos com hash no nome podem ficar em cache para sempre.
+	@assets path /assets/*
+	header @assets Cache-Control "public, max-age=31536000, immutable"
+}
+
+# Quem acessar pelo IP puro é mandado para o endereço com HTTPS.
+http://165.227.94.107 {
+	redir https://165-227-94-107.sslip.io{uri}
+}

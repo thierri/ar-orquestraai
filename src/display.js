@@ -6,6 +6,7 @@ drawMarker(document.getElementById('marker'), 1024);
 // Aberto via localhost, o celular não alcançaria esse endereço: usa o IP da rede.
 const isLocal = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
 const arUrl = `${isLocal ? __LAN_ORIGIN__ : location.origin}/ar/`;
+document.getElementById('lan-hint').hidden = !isLocal;
 
 const link = document.getElementById('ar-link');
 link.href = arUrl;

@@ -17,6 +17,19 @@ npm run dev
 Abra `https://localhost:5173/` no computador e leia o QR code com o celular (mesma rede Wi-Fi).
 O servidor usa um certificado autoassinado (o celular só libera a câmera em HTTPS), então aceite o aviso do navegador nos dois aparelhos.
 
+## Publicação
+
+Produção: **https://165-227-94-107.sslip.io/** (celular: `/ar/`).
+
+Droplet Ubuntu na DigitalOcean servindo os arquivos estáticos com [Caddy](https://caddyserver.com), que emite o certificado HTTPS automaticamente.
+Para publicar uma nova versão (precisa de acesso SSH como `root` na droplet):
+
+```bash
+./deploy/deploy.sh
+```
+
+O script gera o build, envia `dist/` para `/var/www/ar-orquestraai` e atualiza a configuração do Caddy (`deploy/Caddyfile`).
+
 ## Estrutura
 
 - `src/marker.js`: desenho do marcador e geração do arquivo `.patt`, compartilhados pelas duas páginas.
