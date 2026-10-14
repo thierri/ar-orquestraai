@@ -8,12 +8,12 @@ const font = new FontLoader().parse(fontData);
 
 // Medidas relativas a letras de tamanho 1; tudo é escalado no final.
 const EXTRUDE = {
-  depth: 0.28,
+  depth: 0.75,
   curveSegments: 10,
   bevelEnabled: true,
-  bevelThickness: 0.05,
-  bevelSize: 0.03,
-  bevelSegments: 4,
+  bevelThickness: 0.08,
+  bevelSize: 0.04,
+  bevelSegments: 5,
 };
 const GAP = 0.3;
 
@@ -36,8 +36,8 @@ AFRAME.registerComponent('orquestra-text', {
   schema: { width: { type: 'number', default: 2 } },
 
   init() {
-    const main = word('Orquestra', materials('#f4f6fb', '#5b6b8c'));
-    const accent = word('AI', materials('#7fb2ff', '#4a3a9e', '#6c5cff', 0.35));
+    const main = word('Orquestra', materials('#f4f6fb', '#4a5878'));
+    const accent = word('AI', materials('#7fb2ff', '#3d2f8a', '#6c5cff', 0.35));
 
     const mainBox = main.geometry.boundingBox;
     const accentBox = accent.geometry.boundingBox;

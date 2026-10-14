@@ -1,6 +1,7 @@
 import { buildPatternFile, PATTERN_RATIO } from './marker.js';
 import { drawPlate, SIGN_ASPECT } from './sign.js';
 import './text3d.js';
+import { robotHTML } from './robot.js';
 
 const intro = document.getElementById('intro');
 const status = document.getElementById('status');
@@ -46,6 +47,8 @@ function mountScene() {
               material="src: #sign-texture; shader: flat; transparent: true">
             </a-plane>
             <a-entity orquestra-text="width: ${SIGN_WIDTH * 0.8}" position="0 0 0.032"></a-entity>
+            <!-- Robô em pé na borda de cima da placa -->
+            ${robotHTML(`0 ${SIGN_HEIGHT / 2 - 0.02} 0`)}
           </a-entity>
         </a-entity>
       </a-marker>

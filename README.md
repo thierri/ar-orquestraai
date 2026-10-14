@@ -35,5 +35,6 @@ O script gera o build, envia `dist/` para `/var/www/ar-orquestraai` e atualiza a
 - `src/marker.js`: desenho do marcador e geração do arquivo `.patt`, compartilhados pelas duas páginas.
 - `src/sign.js`: placa do letreiro (desenhada em canvas e usada como textura).
 - `src/text3d.js`: letras “Orquestra AI” em relevo 3D (texto extrudado com three.js).
+- `src/robot.js`: robozinho em cima do letreiro (primitivas do A-Frame, com aceno e piscada).
 - `src/ar.js`: cena de realidade aumentada.
 - `src/display.js`: página do computador.
