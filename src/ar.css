@@ -1,0 +1,21 @@
+/* Fundo transparente: o AR.js põe o vídeo da câmera atrás da página (z-index negativo),
+   e qualquer fundo no body cobriria a imagem. */
+html, body { margin: 0; height: 100%; overflow: hidden; background: transparent; }
+body { font: 16px/1.5 system-ui, -apple-system, Roboto, sans-serif; color: #fff; }
+.overlay {
+  position: fixed; inset: 0; z-index: 10;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; padding: 24px; text-align: center;
+  background: #0e1116;
+}
+.overlay h1 { margin: 0; font-size: 24px; }
+.overlay p { margin: 0 0 12px; color: #a7afbd; max-width: 320px; }
+.overlay button {
+  font: inherit; font-weight: 600; color: #0e1116; background: #6ea8ff;
+  border: 0; border-radius: 999px; padding: 14px 28px;
+}
+.status {
+  position: fixed; left: 50%; bottom: 32px; z-index: 10; transform: translateX(-50%);
+  padding: 8px 16px; border-radius: 999px; background: rgba(0, 0, 0, 0.6);
+  font-size: 14px; white-space: nowrap;
+}

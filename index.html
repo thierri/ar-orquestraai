@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR · Tela</title>
+    <link rel="stylesheet" href="/src/display.css" />
+  </head>
+  <body>
+    <main class="stage">
+      <div class="marker-card">
+        <canvas id="marker" aria-label="Marcador de realidade aumentada"></canvas>
+      </div>
+
+      <aside class="panel">
+        <h1>Realidade aumentada</h1>
+        <ol>
+          <li>Escaneie o QR code com o celular (Android + Chrome).</li>
+          <li>Aceite o aviso de certificado e libere a câmera.</li>
+          <li>Aponte a câmera para o marcador ao lado.</li>
+        </ol>
+        <canvas id="qr" aria-label="QR code para abrir no celular"></canvas>
+        <a id="ar-link" class="link"></a>
+        <p class="hint">Celular e computador precisam estar na mesma rede Wi-Fi.</p>
+      </aside>
+    </main>
+    <script type="module" src="/src/display.js"></script>
+  </body>
+</html>

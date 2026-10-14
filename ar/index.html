@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>AR · Câmera</title>
+    <link rel="stylesheet" href="/src/ar.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.4.2/dist/aframe-v1.4.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ar-js-org/ar.js@3.4.5/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body>
+    <div id="intro" class="overlay">
+      <h1>Realidade aumentada</h1>
+      <p>Toque abaixo, libere a câmera e aponte para o marcador na tela do computador.</p>
+      <button id="start">Abrir câmera</button>
+    </div>
+    <div id="status" class="status" hidden>Procurando o marcador…</div>
+    <script type="module" src="/src/ar.js"></script>
+  </body>
+</html>
