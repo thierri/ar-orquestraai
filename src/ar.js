@@ -1,5 +1,6 @@
 import { buildPatternFile, PATTERN_RATIO } from './marker.js';
-import { drawSign, SIGN_ASPECT } from './sign.js';
+import { drawPlate, SIGN_ASPECT } from './sign.js';
+import './text3d.js';
 
 const intro = document.getElementById('intro');
 const status = document.getElementById('status');
@@ -16,11 +17,11 @@ function mountScene() {
   const signCanvas = document.createElement('canvas');
   signCanvas.id = 'sign-texture';
   signCanvas.hidden = true;
-  drawSign(signCanvas);
+  drawPlate(signCanvas);
   document.body.append(signCanvas);
 
   // Largura em unidades do marcador (1 = largura do marcador na tela).
-  const SIGN_WIDTH = 1.8;
+  const SIGN_WIDTH = 2.4;
   const SIGN_HEIGHT = SIGN_WIDTH / SIGN_ASPECT;
 
   // Com a tela na vertical, o eixo Y do marcador aponta para fora do monitor:
@@ -44,12 +45,15 @@ function mountScene() {
             <a-plane width="${SIGN_WIDTH}" height="${SIGN_HEIGHT}" position="0 0 0.031"
               material="src: #sign-texture; shader: flat; transparent: true">
             </a-plane>
+            <a-entity orquestra-text="width: ${SIGN_WIDTH * 0.8}" position="0 0 0.032"></a-entity>
           </a-entity>
         </a-entity>
       </a-marker>
 
-      <a-entity light="type: ambient; intensity: 0.6"></a-entity>
-      <a-entity light="type: directional; intensity: 0.9" position="1 2 1"></a-entity>
+      <!-- Luz principal vindo de cima/lado para destacar o relevo das letras. -->
+      <a-entity light="type: ambient; intensity: 0.5"></a-entity>
+      <a-entity light="type: directional; intensity: 1.1" position="-1 2 1.5"></a-entity>
+      <a-entity light="type: directional; intensity: 0.4; color: #8fb4ff" position="1.5 -0.5 1"></a-entity>
       <a-entity camera></a-entity>
     </a-scene>`);
 

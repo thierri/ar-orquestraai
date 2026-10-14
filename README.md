@@ -20,6 +20,7 @@ O servidor usa um certificado autoassinado (o celular só libera a câmera em HT
 ## Estrutura
 
 - `src/marker.js`: desenho do marcador e geração do arquivo `.patt`, compartilhados pelas duas páginas.
-- `src/sign.js`: arte do letreiro (desenhada em canvas e usada como textura).
+- `src/sign.js`: placa do letreiro (desenhada em canvas e usada como textura).
+- `src/text3d.js`: letras “Orquestra AI” em relevo 3D (texto extrudado com three.js).
 - `src/ar.js`: cena de realidade aumentada.
 - `src/display.js`: página do computador.
