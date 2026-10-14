@@ -18,6 +18,10 @@ function lanAddress() {
 export default defineConfig({
   // HTTPS é obrigatório para o navegador do celular liberar a câmera.
   plugins: [basicSsl()],
+  resolve: {
+    // Só o import exato "three"; "three/examples/..." continua vindo do pacote.
+    alias: [{ find: /^three$/, replacement: resolve(import.meta.dirname, 'src/three-shim.js') }],
+  },
   server: { host: true, port: PORT, strictPort: true },
   preview: { host: true, port: PORT, strictPort: true },
   define: {
